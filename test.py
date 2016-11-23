@@ -20,11 +20,11 @@ class FlaskTestCase(unittest.TestCase):
     def test_correct_login(self):
         tester = app.test_client(self)
         response = tester.post(
-        '/login', 
+        '/login',
         data=dict(username="admin", password="admin"),
         follow_redirects=True
         )
-        self.assertIn(b'You were just logged in' in response.data)
+        self.assertIn(b'You were just logged in', response.data)
 
 
 if __name__ == '__main__':
