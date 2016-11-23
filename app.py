@@ -1,11 +1,13 @@
 # import the Flask class from the flask module
 from flask import Flask, render_template, redirect, url_for, request, session, flash
 from functools import wraps
+import sqlite3
 
 # create the application object
 app = Flask(__name__)
 
 app.secret_key = "my precious"
+app.database = "sample.db"
 
 #login required decorator
 def login_required(f):
@@ -48,6 +50,9 @@ def logout():
     session.pop('logged_in', None)
     flash('You were just logged out!')
     return redirect(url_for('welcome'))
+
+def connect_db():
+    return sqlite3.connect(app.database)
 
 
 # start the server with the 'run()' method
