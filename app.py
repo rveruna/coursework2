@@ -4,6 +4,8 @@ from flask import Flask, render_template, redirect, url_for, request, session
 # create the application object
 app = Flask(__name__)
 
+app.secret_key = "my precious"
+
 # use decorators to link the function to a url
 @app.route('/')
 def home():
