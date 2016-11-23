@@ -7,8 +7,8 @@ from functools import wraps
 # create the application object
 app = Flask(__name__)
 
-app.secret_key = "my precious"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
+#import config.py
+app.config.from_object('config.BaseConfig')
 
 #create the sqlalchemy object
 db = SQLAlchemy(app)
@@ -62,4 +62,4 @@ def logout():
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)
