@@ -12,5 +12,5 @@ class BlogPost(db.Model):
         self.title = title
         self.description = description
 
-    def __init__(self):
+    def __repr__(self):
         return '<title {}'.format(self.title)

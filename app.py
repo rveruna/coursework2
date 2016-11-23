@@ -1,6 +1,6 @@
 # import the Flask class from the flask module
 from flask import Flask, render_template, redirect, url_for, request, session, flash, g
-from flask_sqlalchemy import SQLAlchemy
+from flask.ext.sqlalchemy import SQLAlchemy
 from functools import wraps
 #import sqlite3
 
@@ -60,7 +60,7 @@ def logout():
     return redirect(url_for('welcome'))
 
 #def connect_db():
-    return sqlite3.connect(app.database)
+#    return sqlite3.connect(app.database)
 
 
 # start the server with the 'run()' method
