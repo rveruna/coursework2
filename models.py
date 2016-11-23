@@ -12,5 +12,5 @@ class BlogPost(db.Model):
         self.title = title
         self.description = description
 
-    def __repr__(self):
+    def __iter__(self):
         return '<{}>'.format(self.title)
