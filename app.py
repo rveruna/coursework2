@@ -12,7 +12,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 
 #create the sqlalchemy object
 db = SQLAlchemy(app)
-from models import *
+from models import models.BlogPost
 
 #login required decorator
 def login_required(f):
