@@ -29,7 +29,7 @@ def login_required(f):
 @app.route('/')
 @login_required
 def home():
-    posts = db.session.query(BlogPost).all
+    posts = db.session.query(BlogPost).all()
     return render_template('index.html', posts=posts)
 
 @app.route('/welcome')
