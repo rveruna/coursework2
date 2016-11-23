@@ -27,7 +27,7 @@ def home():
     #return "Hello, World!"  # return a string
     g.db = connect_db()#g is a special object to store temporary objects like database conn
     cur = g.db.execute('select * from posts')
-    posts = [dict(title=row[0], description=row[1] for row in cur.fetchall()]
+    posts = [dict(title=row[0], description=row[1]) for row in cur.fetchall()]
     g.db.close()
     return render_template('index.html', posts=posts)
 
