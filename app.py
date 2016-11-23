@@ -16,7 +16,7 @@ def login_required(f):
         else:
             flash('You need to login first.')
             return redirect(url_for('login'))
-        return wrap
+    return wrap
 
 # use decorators to link the function to a url
 @app.route('/')
