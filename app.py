@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for, request
 
 app = Flask(__name__)
 
@@ -8,7 +8,7 @@ def home():
 
 @app.route('/welcome')
 def welcome():
-    return_template("welcome.html")
+    return render_template("welcome.html")
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0', port=5000)
