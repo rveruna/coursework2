@@ -44,6 +44,7 @@ class FlaskTestCase(unittest.TestCase):
             data=dict(username="admin", password="admin"),
             follow_redirects=True
         )
+        response = tester.get('/logout', follow_redirects=True)
         self.assertIn(b'You were just logged out', response.data)
 
 
