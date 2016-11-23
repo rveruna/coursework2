@@ -9,8 +9,8 @@ app.secret_key = "my precious"
 # use decorators to link the function to a url
 @app.route('/')
 def home():
-    return "Hello, World!"  # return a string
-
+    #return "Hello, World!"  # return a string
+    return render_template('index.html')
 @app.route('/welcome')
 def welcome():
     return render_template('welcome.html')  # render a template
