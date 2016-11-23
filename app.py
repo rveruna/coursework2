@@ -1,6 +1,6 @@
 # import the Flask class from the flask module
-from flask import Flask, render_template, redirect, url_for, request, session, flash, g
-from flask.ext.sqlalchemy import SQLAlchemy
+from flask import Flask, render_template, redirect, url_for, request, session, flash
+from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
 #import sqlite3
 
@@ -12,6 +12,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 
 #create the sqlalchemy object
 db = SQLAlchemy(app)
+
+#import models (after db for right order)
+from models import *
 
 #login required decorator
 def login_required(f):
@@ -28,11 +31,7 @@ def login_required(f):
 @app.route('/')
 @login_required
 def home():
-    #return "Hello, World!"  # return a string
-    g.db = connect_db()#g is a special object to store temporary objects like database conn
-    cur = g.db.execute('select * from posts')
-    posts = [dict(title=row[0], description=row[1]) for row in cur.fetchall()]
-    g.db.close()
+    posts = db.session.query(BlogPost).all
     return render_template('index.html', posts=posts)
 
 @app.route('/welcome')
