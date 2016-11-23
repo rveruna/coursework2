@@ -16,5 +16,16 @@ class FlaskTestCase(unittest.TestCase):
         response = tester.get('/login', content_type='html/text')
         self.assertTrue(b'Please login' in response.data)
 
+    #ensure that login behaves correctly given the correct credentials
+    def test_correct_login(self):
+        tester = app.test_client(self)
+        response = tester.post(
+        '/login', 
+        data=dict(username="admin", password="admin"),
+        follow_redirects=True
+        )
+        self.assertIn(b'You were just logged in' in response.data)
+
+
 if __name__ == '__main__':
     unittest.main()
