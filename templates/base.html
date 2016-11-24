@@ -33,7 +33,6 @@
 
   </head>
   <body>
-    <div class="container">
 
       <!-- child template -->
       {% block content %} {% endblock %}
@@ -47,7 +46,6 @@
         {{ message }}
       {% endfor %}
 
-    </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script> -->
 <script src="{{ url_for('static', filename='js/vendor/jquery-1.11.1.min.js')}}"></script>
