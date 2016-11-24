@@ -10,5 +10,5 @@ class DevelopmentConfig(BaseConfig):
     DEBUG = True
 
 #overriding debug class for deployment
-class ProductionConfig(BaseConfig):
-    DEBUG = False
+#class ProductionConfig(BaseConfig):
+    #DEBUG = False
