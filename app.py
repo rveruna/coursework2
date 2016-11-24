@@ -2,7 +2,6 @@
 from flask import Flask, render_template, redirect, url_for, request, session, flash
 from flask.ext.sqlalchemy import SQLAlchemy
 from functools import wraps
-#import sqlite3
 
 # create the application object
 app = Flask(__name__)
@@ -56,9 +55,6 @@ def logout():
     session.pop('logged_in', None)
     flash('You were just logged out!')
     return redirect(url_for('welcome'))
-
-#def connect_db():
-#    return sqlite3.connect(app.database)
 
 
 # start the server with the 'run()' method
