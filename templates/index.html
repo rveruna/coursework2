@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<body class="page-careers">
+
+<div class="header">
+	<div class="container rel text-left">
+		<a class="brand brand-color" href="/welcome"><img src="{{ url_for('static', filename='img/logo.jpg')}}" style="float:left"></a>
+				<nav class=nav>
+			<ul>
+				<li><a href="/welcome">Home</a>
+				<li class="active"><a href="/login">Login</a>
+			</ul>
+		</nav>
+	</div>
+</div>
+
+
+<div class="level level-hero hero-careers has-hint">
+
+	<div class="container full-height">
+
+    <p>Click <a href="/logout">here</a> to logout.</p>
+    <br><br>
+    <h3>Posts:</h3>
+    {% for post in posts %}
+      <strong>Title:</strong> {{ post.title }} <br>
+      <strong>Post:</strong> {{ post.description }} <br>
+    <br>
+    {% endfor %}
+
+	</div>
+
+	<div class="hint-arrow hint-arrow-contrast"></div>
+
+</div>
+
+<div class="level no-border">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+				<h1 class="mb-25 sm-mb-20 heading scaled color-dark heading-bordered bordered-above">Neque porro quisquam est qui dolorem ipsum.</h1>
+
+				<h2 class="text-center w-300 color-dark mb-70 sm-mb-40 xs-mb-20">Want to know more?</h2>
+			</div>
+		</div>
+
+		<div class="row mb-60 xs-mb-20">
+
+			<div class="col-sm-6 col-lg-4 col-lg-offset-2 xs-mb-20">
+				<div class="has-icon">
+					<i class="icon icon-laptop"></i>
+					<h3 class="mb-25 md-mb-10">Service Item 1.</h3>
+					<p class="smaller">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+
+
+				</div>
+			</div>
+
+			<div class="col-sm-6 col-lg-4">
+				<div class="has-icon">
+					<i class="icon icon-phone"></i>
+					<h3 class="mb-25 md-mb-10">Service Item 2.</h3>
+					<p class="smaller">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row xs-mb-20">
+
+			<div class="col-sm-6 col-lg-4 col-lg-offset-2 xs-mb-20">
+				<div class="has-icon">
+					<i class="icon icon-flame"></i>
+					<h3 class="mb-25 md-mb-10">Service Item 3.</h3>
+					<p class="smaller">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+
+				</div>
+			</div>
+
+			<div class="col-sm-6 col-lg-4">
+				<div class="has-icon">
+					<i class="icon icon-camera"></i>
+					<h3 class="mb-25 md-mb-10">Service Item 4.</h3>
+					<p class="smaller">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+<div class="level">
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-md-6 text-center">
+        <img src="{{ url_for('static', filename='img/ceo.jpg')}}" width="90%">
+				<!-- <img src="img/ceo.jpg" width="90%"> -->
+
+			</div>
+
+			<div class="col-md-6">
+				<h2>Conquer your fears</h2>
+				<br/>
+				<br/>
+				<blockquote>
+					There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+				</blockquote>
+
+				<p>Diana Smith - CEO - BlackTie.co</p>
+			</div>
+
+		</div>
+
+
+	</div>
+
+</div>
+
+
+
+
+
+<div class="footer text-center">
+	<p>
+		<a href="index.html">BLACKTIE.CO</a> | Copyright 2015
+	</p>
+
+</div>
+
+<!-- <h1>Welcome to Flask!</h2>
+<br>
+<p>Click <a href="/logout">here</a> to logout.</p>
+<br><br>
+<h3>Posts:</h3>
+{% for post in posts %}
+  <strong>Title:</strong> {{ post.title }} <br>
+  <strong>Post:</strong> {{ post.description }} <br>
+<br>
+{% endfor %} -->
+
+{% endblock %}
