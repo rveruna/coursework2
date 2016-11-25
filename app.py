@@ -95,7 +95,7 @@ def add():
     g.db.execute('INSERT INTO posts (title,description) VALUES(?,?)',[request.form['title'],request.form['post']]);
     g.db.commit()
     flash('posted')
-    return redirect(url_for('/'))
+    return redirect(url_for('home'))
 
 def connect_db():
     return sqlite3.connect(app.database)
