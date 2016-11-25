@@ -67,7 +67,7 @@ def login():
 @app.route('/rec')
 def rec():
     g.db = connect_db()
-    cur=g.db.execute('select title,description from posts')
+    cur=g.db.execute('select title, description from posts')
     row = cur.fetchall()
     return render_template('index.html',row=row)
 

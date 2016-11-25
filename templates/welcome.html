@@ -18,18 +18,11 @@
 					<div class="row">
 						<div class="col-xs-10 col-sm-6">
 							<h1 class="mb-10 heading">Your Blog. <span>Reinvented.</span></h1>
-							<div class="subheading mb-20">Write here all the thoughts <br class=hidden-xs>that bother you. </div>
+							<div class="subheading mb-20">Place to leave all the thoughts <br class=hidden-xs>that bother you. </div>
 						</div>
 					</div>
 					<div>
-						<!-- <a class="btn btn-prepend btn-launch-video" href="#">
-							<i class="prepended icon-append-play"></i>Watch Video
-						</a> -->
             <a href="/" class="btn btn-prepend"><i class="prepended icon-append-check" aria-hidden="true"></i>Start writing</a>
-
-						<!-- <a class="btn btn-prepend" href="#">
-							<i class="prepended icon-append-iphone"></i>Start writing
-						</a> -->
 					</div>
 				</div>
 			</div>
@@ -49,16 +42,10 @@
 			      <h2 class="w-300 color-dark mb-10 xs-mb-10">Title: {{ post.title [2]}}</h2>
 			      <p class="xs-mw">Post: {{ post.description [2] }}
 			    {% endfor %}
-
-
 				</div>
 			</div>
 		</div>
     <img src="{{ url_for('static', filename='img/iphone6.min.png')}}" alt class="mb-80 hidden-xs iphone-inline">
-
-		<!-- <img src="img/v2/iphone6.min.png" alt class="mb-80 hidden-xs iphone-inline"> -->
-
-
 			</div>
 		</div>
 	</div>
@@ -68,27 +55,17 @@
 		<div class="container xs-mb-30">
       <img src="{{ url_for('static', filename='img/iphone-bg-lg.min.png')}}" class="img-right-sprite">
 
-      <!-- <img class=img-right-sprite src="img/v2/iphone-bg-lg.min.png" alt> -->
-
 			<div class="row mb-60 xs-mb-20">
 				<div class="col-sm-6 col-lg-offset-1 col-lg-5">
-					<h1 class="mb-20 xs-mb-10 heading color-dark heading-bordered xl-heading-outdent">Details</h1>
-					<h2 class="w-300 color-dark mb-10">All what you want in your phone</h2>
-					<p class=xs-mw>Now with Appi you have it on your fingertips.
+					<h1 class="mb-20 xs-mb-10 heading color-dark heading-bordered xl-heading-outdent">Latest blogs</h1>
+					<h2 class="w-300 color-dark mb-10"></h2>
+					<p class=xs-mw>
 				</div>
 			</div>
 
 		<div class="visible-xs xs-mw xs-mb-40">
       <img src="{{ url_for('static', filename='img/iphone-mobile.min.png')}}" class="img-right-sprite">
-
-			<!-- <img src="img/v2/iphone-mobile.min.png" alt> -->
-
 		</div>
-
-
-
-
-			
 		</div>
 
 	</div>
@@ -96,7 +73,7 @@
 
 	<div class="footer text-center">
 	<p class="fmenu">
-		<a href="/welcome">HOME</a> | <a href="/">BLOG</a>
+		<a href="/welcome">HOME</a> | <a href="/">YOUR BLOG</a>
 	</p>
 
 	</div>
