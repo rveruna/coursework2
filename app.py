@@ -63,14 +63,6 @@ def login():
             return redirect(url_for('home'))
     return render_template('login.html', error=error)
 
-#route for adding new record
-@app.route('/rec')
-def rec():
-    g.db = connect_db()
-    cur=g.db.execute('select title, description from posts')
-    row = cur.fetchall()
-    return render_template('index.html',row=row)
-
 #route for deleting
 @app.route('/delete',methods=['POST'])
 @login_required
