@@ -36,7 +36,7 @@ def home():
     #try:
     g.db = connect_db()
     cur = g.db.execute('select * from posts')
-    posts = [dict(title=row[0], description=row[1] for row in cur.fetchall()]
+    posts = [dict(title=row[0], description=row[1]) for row in cur.fetchall()]
         #for row in cur.fetchall():
             #posts.append(dict(title=row[1], description=row[2]))
     g.db.close()
