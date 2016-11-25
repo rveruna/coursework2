@@ -81,13 +81,21 @@ def delete():
     row=cur.fetchall()
     return render_template('delete.html',row=row)
 
-
 @app.route('/logout')
 @login_required
 def logout():
     session.pop('logged_in', None)
     flash('You were just logged out!')
     return redirect(url_for('welcome'))
+
+@app.route('/add', methods=['POST'])
+@login_required
+def add():
+    g.db=connect_db()
+    g.db.execute('INSERT INTO posts (title,description) VALUES(?,?)',[request.form['title'],request.form['post']]);
+    g.db.commit()
+    flash('posted')
+    return redirect(url_for('/'))
 
 def connect_db():
     return sqlite3.connect(app.database)
