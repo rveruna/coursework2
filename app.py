@@ -6,7 +6,7 @@ from functools import wraps
 import sqlite3
 # create the application object
 app = Flask(__name__)
-bcrypt = Bcrypt(app)
+#bcrypt = Bcrypt(app)
 
 app.secret_key = "\xbf\xb4\xff\x989\xa19\x06\xde@0%\xf8\x0b\x90\xe8\xa4w\xa5\xbe\x9d\xe5\x97\xb2"
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
