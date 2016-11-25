@@ -1,12 +1,14 @@
 # import the Flask class from the flask module
 from flask import Flask, render_template, redirect, url_for, request, session, flash, g
 #from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.bcrypt import Bcrypt
 from functools import wraps
 import sqlite3
 # create the application object
 app = Flask(__name__)
+bcrypt = Bcrypt(app)
 
-app.secret_key = "my precious"
+app.secret_key = "\xbf\xb4\xff\x989\xa19\x06\xde@0%\xf8\x0b\x90\xe8\xa4w\xa5\xbe\x9d\xe5\x97\xb2"
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 #import config.py
 #import os
@@ -14,7 +16,7 @@ app.secret_key = "my precious"
 app.database = "sample.db"
 #create the sqlalchemy object
 #db = SQLAlchemy(app)
-#from models import *
+from models import *
 
 #login required decorator
 def login_required(f):
@@ -73,9 +75,9 @@ def rec():
 @app.route('/delete',methods=['POST'])
 def delete():
     g.db = connect_db()
-    g.db.execute("delete from posts where name=?", (request.form['delete'],))
+    cur=g.db.execute('delete from posts where name=?'', (request.form['delete'],))
     g.db.commit()
-    cur=g.db.execute("select * from posts")
+    cur=g.db.execute('select * from posts')
     row=cur.fetchall()
     return render_template("delete.html",row=row)
 
