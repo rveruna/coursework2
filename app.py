@@ -69,7 +69,7 @@ def logout():
     return redirect(url_for('welcome'))
 
 def connect_db():
-    return sqlite3.connect(posts.db)
+    return sqlite3.connect(app.database)
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
