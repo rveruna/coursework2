@@ -73,9 +73,10 @@ def rec():
 
 #route for deleting
 @app.route('/delete',methods=['POST'])
+@login_required
 def delete():
     g.db = connect_db()
-    g.db.execute('delete from posts where name=?', (request.form['delete']))
+    g.db.execute('delete from posts where title=?', (request.form['delete']))
     g.db.commit()
     cur=g.db.execute('select * from posts')
     row=cur.fetchall()
@@ -88,6 +89,7 @@ def logout():
     flash('You were just logged out!')
     return redirect(url_for('welcome'))
 
+#route to add new posts
 @app.route('/add', methods=['POST'])
 @login_required
 def add():
