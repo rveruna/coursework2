@@ -1,6 +1,6 @@
 import sqlite3
 
-with sqlite3.connect("posts.db") as connection:
+with sqlite3.connect("sample.db") as connection:
     c = connection.cursor()
     c.execute("""DROP TABLE posts""")
     c.execute("""'CREATE' TABLE posts(title TEXT, description TEXT)""")
