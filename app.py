@@ -75,11 +75,11 @@ def rec():
 @app.route('/delete',methods=['POST'])
 def delete():
     g.db = connect_db()
-    g.db.execute('delete from posts where name=?'', (request.form['delete']))
+    g.db.execute('delete from posts where name=?', (request.form['delete']))
     g.db.commit()
     cur=g.db.execute('select * from posts')
     row=cur.fetchall()
-    return render_template("delete.html",row=row)
+    return render_template('delete.html',row=row)
 
 
 @app.route('/logout')
