@@ -1,11 +1,11 @@
-#from app import db 
+#from app import db
 from app import bcrypt
 
 #from sqlalchemy import ForeignKey
 #from sqlalchemy.orm import relationship
 
 
-class BlogPost(db.Model):
+#class BlogPost(db.Model):
 
     __tablename__ = "posts"
 

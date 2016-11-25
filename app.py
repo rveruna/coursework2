@@ -16,7 +16,7 @@ app.secret_key = "\xbf\xb4\xff\x989\xa19\x06\xde@0%\xf8\x0b\x90\xe8\xa4w\xa5\xbe
 app.database = "sample.db"
 #create the sqlalchemy object
 #db = SQLAlchemy(app)
-from models import *
+#from models import *
 
 #login required decorator
 def login_required(f):
