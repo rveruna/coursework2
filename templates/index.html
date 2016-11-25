@@ -10,7 +10,7 @@
 				<nav class=nav>
 			<ul>
 				<li><a href="/welcome">Home</a>
-				<li class="active"><a href="/login">Login</a>
+				<li class="active"><a href="/logout">Log out</a>
 			</ul>
 		</nav>
 	</div>
@@ -21,8 +21,6 @@
 
 	<div class="container full-height">
 
-    <p>Click <a href="/logout">here</a> to logout.</p>
-    <br><br>
     <h3>Posts:</h3>
     {% for post in posts %}
       <strong>Title:</strong> {{ post.title }} <br>
