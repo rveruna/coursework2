@@ -61,6 +61,25 @@ def login():
             return redirect(url_for('home'))
     return render_template('login.html', error=error)
 
+#route for adding new record
+@app.route('/rec')
+def rec():
+    g.db = connect_db()
+    cur=g.db.execute('select title,description from posts')
+    row = cur.fetchall()
+    return render_template('index.html',row=row)
+
+#route for deleting
+@app.route('/delete',methods=['POST'])
+def delete():
+    g.db = connect_db()
+    g.db.execute("delete from posts where name=?", (request.form['delete'],))
+    g.db.commit()
+    cur=g.db.execute("select * from posts")
+    row=cur.fetchall()
+    return render_template("delete.html",row=row)
+
+
 @app.route('/logout')
 @login_required
 def logout():
