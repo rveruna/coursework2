@@ -40,6 +40,8 @@ def home():
         for row in cur.fetchall():
             posts.append(dict(title=row[1], description=row[2]))
         g.db.close()
+    except sqlite3.OperationalError:
+        flash("You have no database!")
     return render_template('index.html', posts=posts)
 
 @app.route('/welcome')
