@@ -2,7 +2,6 @@
 {% block content %}
 
 <body class="page-careers">
-
 <div class="header">
 	<div class="container rel text-left">
 		<a class="brand brand-color" href="/welcome"><img src="{{ url_for('static', filename='img/logo.jpg')}}" style="float:left"></a>
@@ -14,11 +13,8 @@
 		</nav>
 	</div>
 </div>
-
 <div class="level level-hero hero-careers has-hint">
-
 	<div class="container full-height">
-
     <h2>Your blog</h2>
 		<br>
     {% for post in posts %}
@@ -26,7 +22,6 @@
       <strong>Post:</strong> {{ post.description }} <br><br>
     <br>
     {% endfor %}
-
 		<form method="post" action="/add">
 			<h3>Add new post</h3>
 			<div class = "form-group row">
@@ -45,12 +40,8 @@
 				</div>
 			</div>
 		</form>
-
-
 	</div>
-
 </div>
 <hr>
-
 
 {% endblock %}
