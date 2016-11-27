@@ -68,9 +68,9 @@ def login():
 @login_required
 def delete():
     g.db = connect_db()
-    g.db.execute('DELETE FROM posts WHERE title=?', (request.form['delete']))
+    g.db.execute('DELETE FROM posts WHERE title=?', (request.form['delete'],))
     g.db.commit()
-    cur=g.db.execute('select * from posts')
+    cur=g.db.execute('SELECT * FROM posts')
     row=cur.fetchall()
     return render_template('home',row=row)
 
