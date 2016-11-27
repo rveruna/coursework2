@@ -6,6 +6,10 @@
 		<a class="brand brand-color" href="/welcome"><img src="{{ url_for('static', filename='img/logo.jpg')}}" style="float:left"></a>
 				<nav class=nav>
 			<ul>
+				<li>
+					<form method="post" action='/ser'>search<input type='text' name='search'><input type='submit'>
+					</form>
+				</li>
 				<li><a href="/welcome">Home</a>
 				<li class="active"><a href="/logout">Log out</a>
 			</ul>
@@ -20,6 +24,7 @@
       <strong>Post:</strong> {{ post.description }} <br><br>
     <br>
     {% endfor %}
+<hr>
 		<form method="post" action="/add">
 			<h3>Add new post</h3>
 			<br>
@@ -39,12 +44,12 @@
 				</div>
 			</div>
 		</form>
-
+<hr>
 		<form method="post" action='/delete'>
 			<h3>Delete post</h3>
 			<br>
 			<div class = "form-group row">
-				<div class="col-lg-4 col-md-4 col-xs-4">
+				<div class="col-lg-7 col-md-7 col-xs-7">
 	  			<input type='text' placeholder="Title of the post you want to delete" class="form-control" name='delete'>
 				</div>
 			</div>

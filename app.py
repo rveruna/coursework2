@@ -72,6 +72,7 @@ def delete():
     g.db.commit()
     cur=g.db.execute('SELECT * FROM posts')
     row=cur.fetchall()
+    flash('deleted')
     return redirect(url_for('home'))
 
 #app route for logout
@@ -90,6 +91,15 @@ def add():
     g.db.execute('INSERT INTO posts (title,description) VALUES(?,?)',[request.form['title'],request.form['post']]);
     g.db.commit()
     flash('posted')
+    return redirect(url_for('home'))
+
+#route for search
+@app.route('/ser', methods=['POST'])
+@login_required
+def ser():
+    g.db=connect_db()
+    cur=g.db.execute('SELECT * FROM posts WHERE title=?', (request.form['search'],))
+    row=cur.fetchall()
     return redirect(url_for('home'))
 
 def connect_db():
