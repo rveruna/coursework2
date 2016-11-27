@@ -74,6 +74,7 @@ def delete():
     row=cur.fetchall()
     return redirect(url_for('home'))
 
+#app route for logout
 @app.route('/logout')
 @login_required
 def logout():
