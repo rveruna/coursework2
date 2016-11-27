@@ -65,7 +65,6 @@ def login():
 
 #route for deleting
 @app.route('/delete',methods=['POST'])
-@login_required
 def delete():
     g.db = connect_db()
     g.db.execute('delete from posts where title=?', (request.form['delete']))
