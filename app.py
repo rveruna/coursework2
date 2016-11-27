@@ -100,7 +100,7 @@ def ser():
     g.db=connect_db()
     cur=g.db.execute('SELECT * FROM posts WHERE title=?', (request.form['search'],))
     row=cur.fetchall()
-    return redirect(url_for('home'))
+    return render_template("search.html",posts=posts)
 
 def connect_db():
     return sqlite3.connect(app.database)

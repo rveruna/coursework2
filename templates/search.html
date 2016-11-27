@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="header">
+	<div class="container rel text-left">
+		<a class="brand brand-color" href="/welcome"><img src="{{ url_for('static', filename='img/logo.jpg')}}" style="float:left"></a>
+				<nav class=nav>
+			<ul>
+				<li>
+					<form method="post" action='/ser'>search<input type='text' name='search'><input type='submit'>
+					</form>
+				</li>
+				<li><a href="/welcome">Home</a>
+				<li class="active"><a href="/logout">Log out</a>
+			</ul>
+		</nav>
+	</div>
+</div>
+	<div class="container full-height">
+    <h2>Your blog</h2>
+		<br>
+    {% for post in posts %}
+      <strong>Title:</strong> {{ post.title }} <br><br>
+      <strong>Post:</strong> {{ post.description }} <br><br>
+    <br>
+    {% endfor %}
+
+</div>
+	</div>
+	<div class="footer text-center">
+		<p>
+			<a href="http://www.veronikarosicova.co.uk/portfolio.html">Check my portfolio</a> | <a href="http://www.veronikarosicova.co.uk">Curriculum Vitae</a>
+		</p>
+	</div>
+
+
+{% endblock %}
