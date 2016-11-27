@@ -24,6 +24,7 @@
     {% endfor %}
 		<form method="post" action="/add">
 			<h3>Add new post</h3>
+			<br>
 			<div class = "form-group row">
 				<div class="col-lg-4 col-md-4 col-xs-4">
 					<INPUT TYPE="text" placeholder="Title of your post" class="form-control" NAME="title" >
@@ -40,6 +41,12 @@
 				</div>
 			</div>
 		</form>
+
+		<form method="post" action='/delete'>
+	  delete<input type='text' name='delete'>
+	  <input type='submit'>
+		</form>
+
 	</div>
 </div>
 <hr>

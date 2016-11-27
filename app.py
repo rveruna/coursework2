@@ -65,13 +65,14 @@ def login():
 
 #route for deleting
 @app.route('/delete',methods=['POST'])
+@login_required
 def delete():
     g.db = connect_db()
     g.db.execute('delete from posts where title=?', (request.form['delete']))
     g.db.commit()
     cur=g.db.execute('select * from posts')
     row=cur.fetchall()
-    return render_template('delete.html',row=row)
+    return render_template('home',row=row)
 
 @app.route('/logout')
 @login_required
