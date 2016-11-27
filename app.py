@@ -72,7 +72,7 @@ def delete():
     g.db.commit()
     cur=g.db.execute('SELECT * FROM posts')
     row=cur.fetchall()
-    return render_template('home',row=row)
+    return redirect(url_for('home'))
 
 @app.route('/logout')
 @login_required
