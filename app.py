@@ -4,14 +4,15 @@ from flask import Flask, render_template, redirect, url_for, request, session, f
 #from flask.ext.bcrypt import Bcrypt
 from functools import wraps
 import sqlite3
+import os
 # create the application object
 app = Flask(__name__)
 #bcrypt = Bcrypt(app)
 
-app.secret_key = "\xbf\xb4\xff\x989\xa19\x06\xde@0%\xf8\x0b\x90\xe8\xa4w\xa5\xbe\x9d\xe5\x97\xb2"
+app.secret_key = os.urandom(24)
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 #import config.py
-#import os
+
 #app.config.from_object('config.DevelopmentConfig')
 app.database = "sample.db"
 #create the sqlalchemy object
