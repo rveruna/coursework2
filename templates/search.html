@@ -20,8 +20,8 @@
     <h2>Your blog</h2>
 		<br>
     {% for title in row %}
-      <strong>Title:</strong> {{ row.title }} <br><br>
-      <strong>Post:</strong> {{ row.description }} <br><br>
+      <strong>Title:</strong> {{ title.title }} <br><br>
+      <strong>Post:</strong> {{ title.description }} <br><br>
     <br>
     {% endfor %}
 

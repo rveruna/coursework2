@@ -46,6 +46,15 @@ def home():
         #flash("You have no database!")
     return render_template('index.html', posts=posts)
 
+#route for search
+@app.route('/ser', methods=['POST'])
+@login_required
+def ser():
+    g.db=connect_db()
+    cur=g.db.execute('SELECT * FROM posts WHERE title=?', (request.form['search'],))
+    row=cur.fetchall()
+    return render_template("search.html", row=row)
+
 @app.route('/welcome')
 def welcome():
     return render_template('welcome.html')  # render a template
@@ -92,15 +101,6 @@ def add():
     g.db.commit()
     flash('posted')
     return redirect(url_for('home'))
-
-#route for search
-@app.route('/ser', methods=['POST'])
-@login_required
-def ser():
-    g.db=connect_db()
-    cur=g.db.execute('SELECT * FROM posts WHERE title=?', (request.form['search'],))
-    row=cur.fetchall()
-    return render_template("search.html", row=row)
 
 def connect_db():
     return sqlite3.connect(app.database)
