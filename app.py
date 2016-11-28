@@ -103,6 +103,7 @@ def add():
     flash('posted')
     return redirect(url_for('home'))
 
+#database object to connect to database
 def connect_db():
     return sqlite3.connect(app.database)
 
