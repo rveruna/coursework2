@@ -19,9 +19,9 @@
 	<div class="container full-height">
     <h2>Your blog</h2>
 		<br>
-    {% for title in row %}
-      <strong>Title:</strong> {{ row.title }} <br><br>
-      <strong>Post:</strong> {{ row.description }} <br><br>
+    {% for title,description in row %}
+      <strong>Title:</strong> {{ title }} <br><br>
+      <strong>Post:</strong> {{ description }} <br><br>
     <br>
     {% endfor %}
 
