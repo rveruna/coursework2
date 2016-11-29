@@ -109,5 +109,5 @@ def connect_db():
     return sqlite3.connect(app.database)
 
 # start the server with the 'run()' method
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug=True)
