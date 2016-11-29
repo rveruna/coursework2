@@ -104,6 +104,11 @@ def add():
     flash('posted')
     return redirect(url_for('home'))
 
+#route for personalised error page
+@app.errorhandler (404)
+def page_not_found (error):
+  return render_template('error.html', title='Error'), 404
+
 #database object to connect to database
 def connect_db():
     return sqlite3.connect(app.database)
