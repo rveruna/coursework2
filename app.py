@@ -7,6 +7,7 @@ import sqlite3
 import os
 # create the application object
 app = Flask(__name__)
+#passing the object into bcrypt
 #bcrypt = Bcrypt(app)
 
 app.secret_key = os.urandom(24)
